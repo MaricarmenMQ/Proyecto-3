@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Mi Familia - Maricarmen{% endblock %}
+
+{% block contenido %}
+    <h1>Mi Entorno Social y Familia</h1>
+    
+    {% for grupo, personas in entorno_social.items %}
+        <div class="seccion">
+            <div class="titulo-seccion">
+                {% if grupo == 'padres' %}
+                    Mis padres
+                {% elif grupo == 'hermanos' %}
+                    Mis hermanos
+                {% elif grupo == 'sobrinos' %}
+                    Mis sobrinos
+                {% elif grupo == 'amigos' %}
+                    Mis amigos cercanos
+                {% else %}
+                    {{ grupo|title }}
+                {% endif %}
+            </div>
+            <ul class="lista">
+                {% for persona in personas %}
+                    <li class="item">{{ persona }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Mis Preferencias - Maricarmen{% endblock %}
+
+{% block contenido %}
+    <h1>Mis Preferencias</h1>
+    
+    <div class="seccion">
+        <div class="titulo-seccion">Géneros Musicales</div>
+        <ul class="lista">
+            {% for genero in generos_musicales %}
+                <li class="item">{{ genero }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <div class="seccion">
+        <div class="titulo-seccion">Artistas Favoritos</div>
+        <ul class="lista">
+            {% for artista in artistas_favoritos %}
+                <li class="item">{{ artista }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <div class="seccion">
+        <div class="titulo-seccion">Canciones que me gustan</div>
+        <ul class="lista">
+            {% for cancion in canciones_favoritas %}
+                <li class="item">{{ cancion }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <div class="seccion">
+        <div class="titulo-seccion">Películas y Series</div>
+        <ul class="lista">
+            {% for titulo in peliculas_series %}
+                <li class="item">{{ titulo }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
